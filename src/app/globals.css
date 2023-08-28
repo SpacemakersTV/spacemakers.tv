@@ -1,0 +1,91 @@
+@font-face {
+	font-family: "Basier Square";
+	src: url("../../public/fonts/basiersquare-regular-webfont.woff2") format("woff2");
+	font-weight: 400;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "Basier Square";
+	src: url("../../public/fonts/basiersquare-regularitalic-webfont.woff2") format("woff2");
+	font-weight: 400;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: "Basier Square";
+	src: url("../../public/fonts/basiersquare-medium-webfont.woff2") format("woff2");
+	font-weight: 500;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "Basier Square";
+	src: url("../../public/fonts/basiersquare-semibold-webfont.woff2") format("woff2");
+	font-weight: 600;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "Basier Square";
+	src: url("../../public/fonts/basiersquare-bold-webfont.woff2") format("woff2");
+	font-weight: 700;
+	font-style: normal;
+}
+
+:root {
+	/* Header */
+	--header-height: 120px;
+
+	/* About */
+	--about-text-size: 1.2rem;
+	--about-header-h3-size: 2rem;
+	--about-header-h2-size: 6rem;
+
+}
+
+@media only screen and (max-width: 1200px) {
+	:root {
+		--about-text-size: 1.2rem;
+		--about-header-h3-size: 1.5rem;
+		--about-header-h2-size: 4rem;
+	}
+}
+
+@media only screen and (max-width: 800px) {
+	:root {
+		--about-text-size: 1.2rem;
+		--about-header-h3-size: 1.5rem;
+		--about-header-h2-size: 3rem;
+	}
+}
+
+@media only screen and (max-width: 425px) {
+	:root {
+		--about-text-size: 0.7rem;
+		--about-header-h3-size: 0.75rem;
+		--about-header-h2-size: 1.5rem;
+	}
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {}
+}
+
+* {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+
+html {
+	font-family: "Basier Square", sans-serif;
+}
+
+html,
+body {
+	max-width: 100vw;
+	overflow-x: hidden;
+}
+
+body {}

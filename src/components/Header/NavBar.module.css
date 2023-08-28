@@ -1,0 +1,69 @@
+/* Style the navigation menu */
+.header__nav {
+    flex: 1;
+    /* Take up remaining space */
+    text-align: right;
+}
+
+.header__nav_list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.header__nav_item {
+    display: inline-block;
+    margin-left: 20px;
+    /* Adjust the spacing between menu items */
+    position: relative;
+    /* Position for pseudo-element */
+}
+
+.header__nav_link {
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.header__nav_link::after {
+    content: "";
+    display: block;
+    height: 2px;
+    background-color: transparent;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 100%;
+    transition: right 0.3s, background-color 0.3s;
+}
+
+.header__nav_item:hover .header__nav_link::after {
+    right: 0;
+    background-color: #000;
+}
+
+/* Media query for responsive design */
+@media screen and (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .header__logo {
+        margin-bottom: 20px;
+        /* Add space below the logo */
+    }
+
+    .header__nav {
+        margin-top: 20px;
+        /* Add space above the navigation menu */
+        text-align: center;
+    }
+
+    .header__nav-item {
+        display: block;
+        margin: 10px 0;
+        /* Adjust the spacing between menu items */
+    }
+}

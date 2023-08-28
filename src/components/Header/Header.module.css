@@ -1,0 +1,19 @@
+/* Header.css */
+
+/* Global styles for the header */
+.header {
+    display: flex;
+    /* justify-content: space-between; */
+    align-items: center;
+    background-color: #FFF;
+    color: #000;
+    padding: 10px 50px;
+    height: var(--header-height);
+}
+
+.header__logo {
+    max-width: 100px;
+    /* Adjust the width as needed */
+    height: auto;
+}
+
