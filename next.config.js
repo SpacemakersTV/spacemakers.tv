@@ -2,9 +2,6 @@
 const nextConfig = {
     trailingSlash: true,
     output: 'export',
-    images: {
-        loader: "akamai",
-        path: "/public", 
-    },
+    basePath: '/spacemakers.tv',
 }
 module.exports = nextConfig
