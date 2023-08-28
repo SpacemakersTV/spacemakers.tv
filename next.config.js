@@ -2,5 +2,9 @@
 const nextConfig = {
     trailingSlash: true,
     output: 'export',
-    }
-    module.exports = nextConfig
+    images: {
+        loader: "akamai",
+        path: "/", 
+    },
+}
+module.exports = nextConfig

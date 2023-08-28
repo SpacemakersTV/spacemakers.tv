@@ -9,7 +9,7 @@ const NavBar = () => {
         <nav className={styles.header__nav}>
                 <ul className={styles.header__nav_list}>
                     <li className={styles.header__nav_item}>
-                        <Link href="/#" className={styles.header__nav_link}>HOME</Link>
+                        <Link href="/" className={styles.header__nav_link}>HOME</Link>
                     </li>
                     <li className={styles.header__nav_item}>
                         <Link href="/work" className={styles.header__nav_link}>WORK</Link>
