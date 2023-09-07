@@ -15,7 +15,6 @@ const ProjectGallery = ({ projects }) => {
 				{projects.map((item, index) => (
 					<Project key={index} project={item} />
 				))}
-
 			</Masonry>
 
 		</div>

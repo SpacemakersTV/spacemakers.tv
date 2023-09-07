@@ -11,12 +11,17 @@
   "dependencies": {
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
+    "@mui/joy": "^5.0.0-beta.5",
     "@mui/lab": "^5.0.0-alpha.141",
     "@mui/material": "^5.14.6",
+    "emailjs-com": "^3.2.0",
     "gh-pages": "^6.0.0",
     "next": "13.4.19",
+    "nuka-carousel": "^6.0.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-responsive-carousel": "^3.2.23"
+    "react-responsive-carousel": "^3.2.23",
+    "react-slick": "^0.29.0",
+    "react-spring-carousel": "^2.0.19"
   }
 }

@@ -1,0 +1,51 @@
+.image_carousel {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    position: relative;
+    width: 80%;
+    height: 80%;
+    /* max-widh: 600px; Set your desired max width */
+    margin: 0 auto;
+    /* border: 1px solid black; */
+    position: relative;
+  }
+  
+  .image_carousel img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    /* height: 100%; */
+  }
+  
+  .arrow_button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    font-size: 20px;
+    outline: none;
+    transition: background-color 0.3s ease;
+  }
+  
+  .arrow-button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+  
+  .prev {
+    z-index: 10;
+    left: 0;
+  }
+  
+  .next {
+    z-index: 10;
+    right: 0;
+  }
+  

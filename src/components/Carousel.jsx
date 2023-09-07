@@ -25,7 +25,7 @@ const Carousel = ({ images }) => {
 	}, [images]);
 
 	const backgroundImageStyle = {
-		backgroundImage: `url(images/carousel/${images[currentImageIndex]})`,
+		backgroundImage: `url(/images/projects/${images[currentImageIndex]})`,
 	  };
 
 	return (

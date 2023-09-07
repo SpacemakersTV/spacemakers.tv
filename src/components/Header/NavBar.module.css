@@ -1,5 +1,6 @@
 /* Style the navigation menu */
 .header__nav {
+    z-index: 10;
     flex: 1;
     /* Take up remaining space */
     text-align: right;
@@ -43,27 +44,47 @@
     background-color: #000;
 }
 
+.header__mobile_toggle {
+    display: none;
+    cursor: pointer;
+}
+
 /* Media query for responsive design */
 @media screen and (max-width: 768px) {
-    .header {
+    .header__nav_list {
+        /* display: none;  */
+        opacity: 0;
+        position: absolute;
+        top: var(--header-height);
+        right: 0;
+        background-color: #fff;
+        padding: 10px;
+        width: 100%;
+        height: calc(100vh - var(--header-height));
+        z-index: 1;
+        transition: all 0.2s ease-in;
+        display: flex;
         flex-direction: column;
-        text-align: center;
+        justify-content: center;
+        align-content: center;
     }
 
-    .header__logo {
-        margin-bottom: 20px;
-        /* Add space below the logo */
-    }
-
-    .header__nav {
-        margin-top: 20px;
-        /* Add space above the navigation menu */
-        text-align: center;
-    }
-
-    .header__nav-item {
+    .header__mobile_toggle {
         display: block;
-        margin: 10px 0;
-        /* Adjust the spacing between menu items */
+        cursor: pointer;
+    }
+
+    .header__nav_list.active {
+        opacity: 1;
+    }
+
+    .header__nav_item {
+        display: flex;
+        justify-content: center;
+        margin: 1rem 0;
+    }
+
+    .header__nav_item .header__nav_link {
+        font-size: 1.5rem;
     }
 }
