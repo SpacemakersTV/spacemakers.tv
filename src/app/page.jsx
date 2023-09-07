@@ -2,10 +2,12 @@
 
 import React from 'react';
 
+import Head from 'next/head'
+
 import Header from '@/components/Header/Header';
 import Carousel from '@/components/Carousel';
 
-const thumbnails =  [
+const thumbnails = [
   "ape/thumbnail.jpg",
   "technology/thumbnail.jpg",
   "candella/thumbnail.png",
