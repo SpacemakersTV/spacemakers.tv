@@ -67,6 +67,7 @@
         flex-direction: column;
         justify-content: center;
         align-content: center;
+        pointer-events: none;
     }
 
     .header__mobile_toggle {
@@ -75,6 +76,7 @@
     }
 
     .header__nav_list.active {
+        pointer-events: all;
         opacity: 1;
     }
 
