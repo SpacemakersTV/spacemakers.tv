@@ -10,11 +10,11 @@ const ProjectGallery = ({ projects }) => {
 	return (
 		<div className={styles.project_gallery}>
 
-			<Masonry columns={2} spacing={1}>
+			{/* <Masonry columns={2} spacing={1}> */}
 				{projects.map((item, index) => (
 					<Project key={index} project={item} />
 				))}
-			</Masonry>
+			{/* </Masonry> */}
 
 		</div>
 	);

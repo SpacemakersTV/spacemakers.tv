@@ -10,6 +10,7 @@ const Header = () => {
     return (
         <header className={styles.header}>
             <img className={styles.header__logo} src="/images/logo_no_text2.png" alt="logo" />
+            {/* <img className={styles.header__logo} src="/gifs/Spacemakers_Logo_anim__3.gif" alt="logo" /> */}
             <NavBar />
         </header>
     );

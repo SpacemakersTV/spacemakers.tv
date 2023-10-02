@@ -1,8 +1,11 @@
-import {React, useRef} from "react";
+import { React, useRef } from "react";
 import Modal from '@mui/joy/Modal';
 import ModalClose from '@mui/joy/ModalClose';
 import ModalDialog from '@mui/joy/ModalDialog';
 import ModalOverflow from '@mui/joy/ModalOverflow';
+import parse from 'html-react-parser';
+import Image from "next/image";
+
 
 import styles from "./ProjectModal.module.css";
 
@@ -25,16 +28,26 @@ const ProjectModal = (props) => {
             <Modal layout='fullscreen' open={true} onClose={handleClose} >
                 <ModalOverflow>
                     <ModalDialog layout='fullscreen' aria-labelledby="layout-modal-title" aria-describedby="layout-modal-description" className={styles.modal}>
-                        <ModalClose/>
+                        <ModalClose />
                         <div className={styles.modal_container}>
                             <div className={styles.modal_text_container}>
-                                <h1 className={styles.modal_title}>{project.project_title}</h1>
-                                <p className={styles.modal_description}>{project.project_description}</p>
+                                <h1 className={styles.modal_title}>{project.title}</h1>
+                                <p className={styles.modal_description}>{parse(project.description)}</p>
+                                {/* <iframe src="https://drive.google.com/uc?id=1vL-L7kOWonTrI4IkhD2ZyN-OnMUWV42V" width="640" height="480" allow="autoplay"></iframe> */}
                             </div>
 
                             <div className={styles.modal_images_container}>
-                                {project.project_images.map((image, index) => (
-                                    <img key={index} src={`/images/projects/${image}`} className={styles.modal_img} />
+                                {project.image_links.map((image, index) => (
+                                    // <img key={index} src={image} className={styles.modal_img} />
+
+                                    <Image
+                                        width={960}
+                                        height={540}
+                                        src={image}
+                                        alt={project.title}
+                                        className={styles.project_image}
+                                        priority
+                                    />
                                 ))}
                             </div>
                         </div>

@@ -37,7 +37,7 @@
 	/* Header */
 	--header-height: 120px;
 
-	--modal-width: 80%;	
+	--modal-width: 80%;
 	--modal-height: 80%;
 
 
@@ -46,38 +46,70 @@
 	--about-header-h3-size: 2rem;
 	--about-header-h2-size: 6rem;
 
-	  /* white-space */
-	  --global-baseline: calc(1rem/3);
-	  --global-whitespace-xxs: var(--global-baseline);
-	  --global-whitespace-xs: calc(var(--global-baseline) * 2);
-	  --global-whitespace-sm: calc(var(--global-baseline) * 3);
-	  --global-whitespace-md: calc(var(--global-baseline) * 4);
-	  --global-whitespace-lg: calc(var(--global-baseline) * 5);
-	  --global-whitespace-xl: calc(var(--global-baseline) * 6);
+	/* PROJECTS */
+	--thumbnail-width: 49.5%;
+	--thumbnail-height: 100%;
+	--thumbnail-image-height: none;
+
+	--thumbnail-order: wrap;
+
+	/* white-space */
+	--global-baseline: calc(1rem/3);
+	--global-whitespace-xxs: var(--global-baseline);
+	--global-whitespace-xs: calc(var(--global-baseline) * 2);
+	--global-whitespace-sm: calc(var(--global-baseline) * 3);
+	--global-whitespace-md: calc(var(--global-baseline) * 4);
+	--global-whitespace-lg: calc(var(--global-baseline) * 5);
+	--global-whitespace-xl: calc(var(--global-baseline) * 6);
 
 }
 
 @media only screen and (max-width: 1200px) {
 	:root {
+		/* ABOUT */
 		--about-text-size: 1.2rem;
 		--about-header-h3-size: 1.5rem;
 		--about-header-h2-size: 4rem;
+
+		/* PROJECTS */
+		--thumbnail-width: 49.5%;
+		--thumbnail-height: 400px;
+		--thumbnail-order: wrap;
+		--thumbnail-order-direction: row;
+
+		--thumbnail-image-height: none;
+		
 	}
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 768px) {
 	:root {
+		/* ABOUT */
 		--about-text-size: 1.2rem;
 		--about-header-h3-size: 1.5rem;
 		--about-header-h2-size: 3rem;
+
+		/* PROJECTS */
+		--thumbnail-width: 99%;
+		--thumbnail-height: 300px;
+		--thumbnail-order-direction: column;
+		--thumbnail-order: no-wrap;
+
+		--thumbnail-image-height: none;
+
+		
 	}
 }
 
 @media only screen and (max-width: 425px) {
 	:root {
+		/* ABOUT */
 		--about-text-size: 0.7rem;
 		--about-header-h3-size: 0.75rem;
 		--about-header-h2-size: 1.5rem;
+		--thumbnail-image-height: 100%;
+		--thumbnail-height: 200px;
+		--thumbnail-order: no-wrap;
 	}
 }
 

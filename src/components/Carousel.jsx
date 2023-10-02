@@ -38,6 +38,8 @@ const Carousel = ({ images }) => {
 				alt={`Image ${currentImageIndex + 1}`}
 			/>
 
+			{/* <Image></Image> */}
+
 
 			<div className={styles.slogan_container}>
 				<Slogan/>

@@ -1,6 +1,8 @@
 .project_gallery {
   position: relative;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  flex-direction: var(--thumbnail-order-direction);
+  flex-wrap: var(--thumbnail-order);
+  justify-content: space-evenly;
+  width: 100%;
 }
