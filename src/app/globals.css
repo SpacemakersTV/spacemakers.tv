@@ -53,6 +53,9 @@
 
 	--thumbnail-order: wrap;
 
+	/* FILTER */
+	--filter-item-margin: var(--global-whitespace-xxs);
+
 	/* white-space */
 	--global-baseline: calc(1rem/3);
 	--global-whitespace-xxs: var(--global-baseline);
@@ -79,6 +82,7 @@
 
 		--thumbnail-image-height: none;
 		
+		/* FILTER */
 	}
 }
 
@@ -98,6 +102,7 @@
 		--thumbnail-image-height: none;
 
 		
+		
 	}
 }
 
@@ -110,6 +115,8 @@
 		--thumbnail-image-height: 100%;
 		--thumbnail-height: 200px;
 		--thumbnail-order: no-wrap;
+
+		--filter-item-margin: var(--global-whitespace-xxs);
 	}
 }
 

@@ -40,13 +40,14 @@ const ProjectModal = (props) => {
                                 {project.image_links.map((image, index) => (
                                     // <img key={index} src={image} className={styles.modal_img} />
 
-                                    <Image
-                                        width={960}
-                                        height={540}
+                                    <img
+                                        key={index}
+                                        // width={960}
+                                        // height={540}
                                         src={image}
                                         alt={project.title}
-                                        className={styles.project_image}
-                                        priority
+                                        className={styles.modal_img}
+                                        // priority
                                     />
                                 ))}
                             </div>
