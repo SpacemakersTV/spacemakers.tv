@@ -7,10 +7,6 @@ import Project from './Project';
 
 
 const ProjectGallery = ({ projects, tags }) => {
-
-	// const [filteredProjects, setFilteredProjects] = React.useState([]);
-
-
 	// let filteredProjects = projects.filter(project => {
 	// 	return tags.some(tag => project.tags.includes(tag))
 	// })
@@ -22,17 +18,11 @@ const ProjectGallery = ({ projects, tags }) => {
 
 	filteredProjects = filteredProjects.sort((a, b) => new Date(b.date) - new Date(a.date));
 
-	// setFilteredProjects(temp);
-
 	return (
 		<div className={styles.project_gallery}>
-
-			{/* <Masonry columns={2} spacing={1}> */}
-				{filteredProjects.map((item, index) => (
-					<Project key={index} project={item} />
-				))}
-			{/* </Masonry> */}
-
+			{filteredProjects.map((item, index) => (
+				<Project key={index} project={item} />
+			))}
 		</div>
 	);
 };

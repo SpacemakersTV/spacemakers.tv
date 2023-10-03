@@ -12,8 +12,8 @@ const Work = () => {
 
     useEffect(() => {
 
-        // fetch("http://localhost:7071/api/fetch_site_data", {
-        fetch("https://spacemakerstv-update.azurewebsites.net/api/fetch_site_data?code=HkkF8Q_3TORr1cyAH7vYELArnwqo8nkc4NQ7oEfAAebzAzFuUPb_eA==", {
+        fetch("http://localhost:7071/api/fetch_site_data", {
+        // fetch("https://spacemakerstv-update.azurewebsites.net/api/fetch_site_data?code=HkkF8Q_3TORr1cyAH7vYELArnwqo8nkc4NQ7oEfAAebzAzFuUPb_eA==", {
             method: "GET",
         })
             .then((response) => response.json())

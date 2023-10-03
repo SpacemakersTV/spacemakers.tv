@@ -46,6 +46,10 @@
 	--about-header-h3-size: 2rem;
 	--about-header-h2-size: 6rem;
 
+	--about-header-text-size: 1.8rem;
+	--about-team-title-size: 1.3rem;
+	--about-text-size: 1.2rem;
+
 	/* PROJECTS */
 	--thumbnail-width: 49.5%;
 	--thumbnail-height: 100%;
@@ -72,7 +76,10 @@
 		/* ABOUT */
 		--about-text-size: 1.2rem;
 		--about-header-h3-size: 1.5rem;
-		--about-header-h2-size: 4rem;
+		--about-header-h2-size: 3.5rem;
+
+		--about-header-text-size: 1.4rem;
+		--about-team-title-size: 1rem;
 
 		/* PROJECTS */
 		--thumbnail-width: 49.5%;
@@ -93,6 +100,8 @@
 		--about-header-h3-size: 1.5rem;
 		--about-header-h2-size: 3rem;
 
+		--about-team-title-size: 1rem;
+
 		/* PROJECTS */
 		--thumbnail-width: 99%;
 		--thumbnail-height: 300px;
@@ -112,6 +121,11 @@
 		--about-text-size: 0.7rem;
 		--about-header-h3-size: 0.75rem;
 		--about-header-h2-size: 1.5rem;
+
+		--about-header-text-size: 1.4rem;
+		--about-text-size: 0.8rem;
+		--about-team-title-size: 1.1rem;
+
 		--thumbnail-image-height: 100%;
 		--thumbnail-height: 200px;
 		--thumbnail-order: no-wrap;
