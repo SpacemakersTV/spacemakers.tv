@@ -9,14 +9,12 @@ export const metadata = {
     appleTouchIcon: '/apple-touch-icon.png',
     favicon32: '/favicon-32x32.png',
     favicon16: '/favicon-16x16.png',
-    // manifest: '/site.webmanifest',
-    // maskIcon: '/safari-pinned-tab.svg',
   }
 }
 
 export default function App({ Component, pageProps }) {
   return (
-    <React.Fragment>
+    <>
       <Head>
         <link rel="shortcut icon" href="/favicon.ico" />
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
@@ -24,6 +22,6 @@ export default function App({ Component, pageProps }) {
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
       </Head>
       <Component {...pageProps} />
-    </React.Fragment>
+    </>
   )
 }    
