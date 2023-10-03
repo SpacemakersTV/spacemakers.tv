@@ -15,10 +15,6 @@ const Work = () => {
         // fetch("http://localhost:7071/api/fetch_site_data", {
         fetch("https://spacemakerstv-update.azurewebsites.net/api/fetch_site_data?code=HkkF8Q_3TORr1cyAH7vYELArnwqo8nkc4NQ7oEfAAebzAzFuUPb_eA==", {
             method: "GET",
-            // headers: {
-            //     "X-RapidAPI-Key": "your-api-key",
-            //     "X-RapidAPI-Host": "jokes-by-api-ninjas.p.rapidapi.com",
-            // },
         })
             .then((response) => response.json())
             .then((data) => {
