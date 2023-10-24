@@ -1,48 +1,74 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react"; // Fixed the import here
 import Header from "../components/Header/Header";
 import ProjectGallery from "@/components/Projects/ProjectGallery";
 import ProjectFilter from "@/components/Projects/ProjectFilter";
 
+import { useSearchParams } from 'next/navigation'
+
+
+import { useRouter } from 'next/router';
 
 const Work = () => {
+    const searchParams = useSearchParams();
+    const project_id = searchParams.get('project');
 
-    const [projects, setProjects] = React.useState([]);
-    const [tags, setTags] = React.useState([]);
-    const [selectedTags, setSelectedTags] = React.useState([]);
+    // const router = useRouter();
+    // const project_id = router.query.project;
+
+    // console.log(project_id)
+    const [selectedProjectId, setSelectedProjectId] = useState(project_id);
+
+    const [projects, setProjects] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
+
+    const [tags, setTags] = useState([]);
+    const [selectedTags, setSelectedTags] = useState([]);
 
     useEffect(() => {
+        if (project_id) {
+            setSelectedProjectId(project_id);
+        }
+    }, [project_id]);
 
-        // fetch("http://localhost:7071/api/fetch_site_data", {
-        fetch("https://spacemakerstv-update.azurewebsites.net/api/fetch_site_data?code=HkkF8Q_3TORr1cyAH7vYELArnwqo8nkc4NQ7oEfAAebzAzFuUPb_eA==", {
-            method: "GET",
-        })
-            .then((response) => response.json())
-            .then((data) => {
-                //sort data based on date key
-                // console.log(data);
-
-                setTags(data['tags'])
-                setSelectedTags([])
-
-                data = data['data'];
-                data.sort((a, b) => new Date(b.date) - new Date(a.date));
-                setProjects(data);
-                // console.log(data);
+    useEffect(() => {
+        const url = "https://storage.googleapis.com/spacemakers_site/_site_data";
+        fetch(url)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("Network response was not ok");
+                }
+                return response.json();
             })
-            .catch((error) => console.log(error));
+            .then(data => {
+                setLoading(false);
+                setProjects(data["data"]);
+                setTags(data['tags']);
+            })
+            .catch(error => {
+                setError(error);
+                setLoading(false);
+            });
     }, []);
 
     const handleTagChange = (_tags) => {
         setSelectedTags(_tags);
+        // setSelectedTags([...selectedTags, _tags]);
     }
 
     return (
         <div>
-            {console.log(selectedTags)}
             <Header />
-            <ProjectFilter tags={tags} handleTagsChange={handleTagChange} />
-            <ProjectGallery projects={projects} tags={selectedTags} />
+            {console.log(selectedProjectId)}
+            {loading ? <div>Loading...</div>
+                :
+                <>
+                    <ProjectFilter tags={tags} handleTagsChange={handleTagChange} />
+                    <ProjectGallery projects={projects} tags={selectedTags} selectedProjectId={selectedProjectId} setSelectedProjectId={setSelectedProjectId} />
+                </>
+            }
         </div>
     );
 };
+
 export default Work;

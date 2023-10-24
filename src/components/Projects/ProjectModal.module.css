@@ -5,6 +5,12 @@
     overflow: hidden;
 }
 
+/*<div className="video_wrapper" key={index}>
+MediaPlayer muted className={styles.media_player} controls title={project.title} src={[{ src: video, type: 'video/mp4' }]}>
+<MediaProvider />
+</MediaPlayer> 
+</div>*/
+
 .modal_container {
     width: 100%;
     height: 100%;
@@ -16,11 +22,16 @@
 /* MODAL TEXT */
 
 .modal_text_container {
+    position: relative;
     width: 50%;
     height: 100%;
     /* background-color: #a7a7a7; */
     padding: calc(var(--global-whitespace-xl)*3);
-} 
+}
+
+.modal_text_container p {
+    margin-bottom: var(--global-whitespace-lg);
+}
 
 .modal_title {
     font-size: 3rem;
@@ -46,18 +57,54 @@
     margin-bottom: var(--global-whitespace-md);
     width: 100%;
     object-fit: cover;
+    height: auto;
 }
 
 .modal_img:last-child {
     margin: 0;
 }
 
+/* Add this to your existing CSS file */
+
+
+.media_player {
+    /* position: absolute; */
+    /* top: 0;
+    left: 0; */
+    width: 80%;
+    height: 80%;
+}
+
+.landscape .video_wrapper {
+    width: 100%;
+}
+
+.portrait .video_wrapper {
+    width: 50%;
+}
+
+@media only screen and (max-width: 1200px) {
+
+    /* ...existing CSS */
+    .landscape .video_wrapper,
+    .portrait .video_wrapper {
+        width: 100%;
+    }
+}
+
+
+
+/* .media_player {
+    height: 400px;
+} */
+
 
 @media only screen and (max-width: 1200px) {
 
     .modal {
-        overflow:unset;
+        overflow: unset;
     }
+
     .modal_container {
         flex-direction: column;
     }
@@ -84,6 +131,7 @@
         margin-right: var(--global-whitespace-sm);
         width: 90%;
         height: 300px;
+        height: auto;
         /* height: 100%; */
         /* width: auto; */
         /* width: 60%; */
@@ -104,5 +152,5 @@
 @media only screen and (max-width: 425px) {
     .modal_text_container {
         padding: var(--global-whitespace-xl);
-    } 
+    }
 }

@@ -15,6 +15,7 @@
     "@mui/lab": "^5.0.0-alpha.141",
     "@mui/material": "^5.14.6",
     "@notionhq/client": "^2.2.13",
+    "@vidstack/react": "^1.4.5",
     "axios": "^1.5.1",
     "emailjs-com": "^3.2.0",
     "gh-pages": "^6.0.0",

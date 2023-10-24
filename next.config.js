@@ -4,7 +4,7 @@ const nextConfig = {
 	// output: 'export',
 	reactStrictMode: true,
 	images: {
-		domains: ["drive.google.com"],
+		domains: ["storage.googleapis.com"],
 	}
 };
 

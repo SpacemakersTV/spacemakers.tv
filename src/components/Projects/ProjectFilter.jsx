@@ -4,8 +4,7 @@ import styles from "./ProjectFilter.module.css";
 
 const ProjectFilter = (props) => {
     const tags = props.tags;
-    const [selectedTags, setSelectedTags] = React.useState(tags);
-   
+    const [selectedTags, setSelectedTags] = React.useState([]);
 
     // useEffect(() => {
     //     setSelectedTags(tags);
@@ -21,6 +20,8 @@ const ProjectFilter = (props) => {
         } else {
             props.handleTagsChange(selectedTags);
         }
+
+        console.log(selectedTags);
     }, [selectedTags]);
 
     const handleClicked = (e) => {

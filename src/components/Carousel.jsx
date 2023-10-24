@@ -26,7 +26,8 @@ const Carousel = ({ images }) => {
 
 	const backgroundImageStyle = {
 		backgroundImage: `url(/images/projects/${images[currentImageIndex]})`,
-	  };
+		// backgroundImage: `url(https://storage.googleapis.com/spacemakers_site/15Th9KVeN8W_OBjRoPwg8a1Rtn_SlN5hb)`,
+	};
 
 	return (
 		<div className={'carousel_container'}>
@@ -40,9 +41,11 @@ const Carousel = ({ images }) => {
 
 			{/* <Image></Image> */}
 
+			{/* <img src={`/images/projects/${images[currentImageIndex]})`} alt="" /> */}
+
 
 			<div className={styles.slogan_container}>
-				<Slogan/>
+				<Slogan />
 			</div>
 		</div >
 	);

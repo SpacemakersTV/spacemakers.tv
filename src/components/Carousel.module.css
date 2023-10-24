@@ -9,6 +9,8 @@
   padding-bottom: 600px;
   background-repeat: no-repeat;
   transition: background-image 0.5s ease-in-out;
+
+  object-fit: cover;
 }
 
 .slogan_container {

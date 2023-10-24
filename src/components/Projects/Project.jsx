@@ -15,14 +15,10 @@ import ProjectModal from "./ProjectModal";
 import styles from "./Project.module.css";
 
 
-const arrayContains = (needle, arrhaystack) => {
-    return (arrhaystack.indexOf(needle));
-}
 
-const Project = ({ project }) => {
+const Project = ({ project, selected }) => {
     const router = useRouter()
-
-    const [open, setOpen] = React.useState(false);
+    const [open, setOpen] = React.useState(selected);
 
     const handleOpen = () => {
         // router.push(`/?project=${'temp'}`, undefined, { shallow: true })
