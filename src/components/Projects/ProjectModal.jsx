@@ -27,17 +27,17 @@ const videoOrientation = (videoElement) => {
 const ProjectModal = (props) => {
     const project = props.project;
 
-    const videoRefs = useRef(props.project.video_links.map(() => useRef()));
+    // const videoRefs = useRef(props.project.video_links.map(() => useRef()));
 
-    useEffect(() => {
-        // Update the orientation class for each video element
-        videoRefs.current.forEach((ref, index) => {
-            if (ref.current) {
-                const orientationClass = videoOrientation(ref.current);
-                ref.current.classList.add(orientationClass);
-            }
-        });
-    }, []);
+    // useEffect(() => {
+    //     // Update the orientation class for each video element
+    //     videoRefs.current.forEach((ref, index) => {
+    //         if (ref.current) {
+    //             const orientationClass = videoOrientation(ref.current);
+    //             ref.current.classList.add(orientationClass);
+    //         }
+    //     });
+    // }, []);
 
 
     const handleClose = () => {
@@ -63,7 +63,7 @@ const ProjectModal = (props) => {
 
                                 {project.video_links.length !== 0 && project.video_links.map((video, index) => (
                                     <video
-                                        ref={videoRefs.current[index]}
+                                        // ref={videoRefs.current[index]}
                                         key={index}
                                         src={video}
                                         className={styles.modal_video}
