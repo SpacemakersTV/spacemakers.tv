@@ -1,4 +1,4 @@
-import { React, useRef } from "react";
+import { React, useRef,useEffect } from "react";
 import Modal from '@mui/joy/Modal';
 import ModalClose from '@mui/joy/ModalClose';
 import ModalDialog from '@mui/joy/ModalDialog';
@@ -7,19 +7,14 @@ import parse from 'html-react-parser';
 
 import Image from "next/image";
 
-import '@vidstack/react/player/styles/base.css';
-import { MediaPlayer, MediaProvider } from '@vidstack/react';
-
 
 import styles from "./ProjectModal.module.css";
 
 // Function to determine video orientation
-const videoOrientation = (video) => {
+const videoOrientation = (videoElement) => {
     // Assume the video is landscape by default
     let orientationClass = styles.landscape;
-    const videoElement = document.createElement('video');
 
-    videoElement.src = video;
     videoElement.addEventListener('loadedmetadata', () => {
         if (videoElement.videoHeight > videoElement.videoWidth) {
             orientationClass = styles.portrait;
@@ -31,6 +26,18 @@ const videoOrientation = (video) => {
 
 const ProjectModal = (props) => {
     const project = props.project;
+
+    const videoRefs = useRef(props.project.video_links.map(() => useRef()));
+
+    useEffect(() => {
+        // Update the orientation class for each video element
+        videoRefs.current.forEach((ref, index) => {
+            if (ref.current) {
+                const orientationClass = videoOrientation(ref.current);
+                ref.current.classList.add(orientationClass);
+            }
+        });
+    }, []);
 
 
     const handleClose = () => {
@@ -55,17 +62,13 @@ const ProjectModal = (props) => {
                             <div className={styles.modal_images_container}>
 
                                 {project.video_links.length !== 0 && project.video_links.map((video, index) => (
-                                    <div key={index} className={`${styles.video_wrapper} ${videoOrientation(video)}`}>
-                                        <MediaPlayer
-                                            muted
-                                            className={styles.media_player}
-                                            controls
-                                            title={project.title}
-                                            src={[{ src: video, type: 'video/mp4' }]}
-                                        >
-                                            <MediaProvider />
-                                        </MediaPlayer>
-                                    </div>
+                                    <video
+                                        ref={videoRefs.current[index]}
+                                        key={index}
+                                        src={video}
+                                        className={styles.modal_video}
+                                        controls
+                                    />
                                 ))}
 
                                 {project.image_links.map((image, index) => (

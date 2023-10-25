@@ -44,6 +44,8 @@ const Work = () => {
                 setLoading(false);
                 setProjects(data["data"]);
                 setTags(data['tags']);
+
+                console.log(data['data'])
             })
             .catch(error => {
                 setError(error);
