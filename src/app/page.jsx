@@ -8,15 +8,15 @@ import Header from '@/components/Header/Header';
 import Carousel from '@/components/Carousel';
 
 const thumbnails = [
-  "ape/thumbnail.jpg",
-  "technology/thumbnail.jpg",
-  "candella/thumbnail.png",
-  "sylvie_kreusch/thumbnail.jpg",
-  "knalpot/thumbnail.jpg",
-  "nye/thumbnail.jpg",
-  "whorses/thumbnail.jpg",
-  "obscuur/thumbnail.jpg",
-  "gertie_decraene/thumbnail.jpg"
+  { "src": "ape/thumbnail.jpg", "width": 1280, "height": 720 },
+  { "src": "technology/thumbnail.jpg", "width": 1280, "height": 720 },
+  { "src": "candella/thumbnail.png", "width": 1280, "height": 720 },
+  { "src": "sylvie_kreusch/thumbnail.jpg", "width": 1280, "height": 720 },
+  { "src": "knalpot/thumbnail.jpg", "width": 1280, "height": 720 },
+  { "src": "nye/thumbnail.jpg", "width": 1280, "height": 720 },
+  { "src": "whorses/thumbnail.jpg", "width": 1280, "height": 720 },
+  { "src": "obscuur/thumbnail.jpg", "width": 1280, "height": 720 },
+  { "src": "gertie_decraene/thumbnail.jpg", "width": 1280, "height": 720 }
 ]
 
 export default function Home() {

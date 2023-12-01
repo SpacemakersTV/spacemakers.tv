@@ -1,53 +1,44 @@
-"use client";
-
-import React, { useState, useEffect } from "react";
-import styles from "./Carousel.module.css";
-// import "./Carousel.css";
-import Slogan from "./Slogan";
-
-import Image from 'next/image'
-
+import React, { useState, useEffect } from 'react';
+import styles from './Carousel.module.css';
+import Slogan from './Slogan';
 
 const Carousel = ({ images }) => {
 	const [currentImageIndex, setCurrentImageIndex] = useState(0);
+	const [nextImageIndex, setNextImageIndex] = useState(1);
+	const [fade, setFade] = useState(false);
 
 	useEffect(() => {
-		// Automatically advance to the next image every 5 seconds
 		const interval = setInterval(() => {
-			setCurrentImageIndex((prevIndex) =>
-				prevIndex === images.length - 1 ? 0 : prevIndex + 1
-			);
-		}, 5000);
+			setFade(true);
+			setTimeout(() => {
+				setCurrentImageIndex(nextImageIndex);
+				setNextImageIndex((nextImageIndex + 1) % images.length);
+				setFade(false);
+			}, 1000); // Duration of the fade effect
+		}, 4000); // Interval for each image transition
 
-		return () => {
-			clearInterval(interval);
-		};
-	}, [images]);
-
-	const backgroundImageStyle = {
-		backgroundImage: `url(/images/projects/${images[currentImageIndex]})`,
-		// backgroundImage: `url(https://storage.googleapis.com/spacemakers_site/15Th9KVeN8W_OBjRoPwg8a1Rtn_SlN5hb)`,
-	};
+		return () => clearInterval(interval);
+	}, [nextImageIndex, images.length]);
 
 	return (
-		<div className={'carousel_container'}>
-
-
-			<div
-				className={styles.background_image_container}
-				style={backgroundImageStyle}
-				alt={`Image ${currentImageIndex + 1}`}
-			/>
-
-			{/* <Image></Image> */}
-
-			{/* <img src={`/images/projects/${images[currentImageIndex]})`} alt="" /> */}
-
-
+		<div className={styles.carouselContainer}>
 			<div className={styles.slogan_container}>
 				<Slogan />
 			</div>
-		</div >
+			
+			<img
+				src={`/images/projects/${images[currentImageIndex].src}`}
+				alt="Current Carousel Image"
+				className={`${styles.carouselImage} ${!fade ? styles.visible : ''}`}
+			/>
+			<img
+				src={`/images/projects/${images[nextImageIndex].src}`}
+				alt="Next Carousel Image"
+				className={`${styles.carouselImage} ${styles.nextImage} ${fade ? styles.visible : ''}`}
+			/>
+
+
+		</div>
 	);
 };
 
