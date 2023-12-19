@@ -16,6 +16,7 @@ const NavBar = (props) => {
                     <path fillRule="evenodd" d="M2 3.5a.5.5 0 0 1 .5-.5h12a.5.5 0 0 1 0 1H2a.5.5 0 0 1-.5-.5zm0 5a.5.5 0 0 1 .5-.5h12a.5.5 0 0 1 0 1H2a.5.5 0 0 1-.5-.5zm0 5a.5.5 0 0 1 .5-.5h12a.5.5 0 0 1 0 1H2a.5.5 0 0 1-.5-.5z"/>
                 </svg>
             </div>
+            
             <ul className={`${styles.header__nav_list} ${mobileNavOpen ? styles.active : ''}`}>
                 <li className={styles.header__nav_item}>
                     <Link href="/" className={styles.header__nav_link}>HOME</Link>

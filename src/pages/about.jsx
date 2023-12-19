@@ -1,15 +1,11 @@
 import React from "react";
 
-import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
-import Header from "../components/Header/Header";
-
 import styles from "./about.module.css";
 
 const About = () => {
     return (
         <div>
-            <Header />
             <div className={styles.about_container}>
                 <Container className={styles.about_image}>
                     <h3>THIS IS</h3>
