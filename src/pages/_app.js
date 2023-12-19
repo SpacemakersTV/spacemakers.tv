@@ -3,11 +3,15 @@ import React , {useState, useEffect} from "react"
 import RootLayout from "@/components/RootLayout"
 import Header from "@/components/Header/Header"
 
+import {useRouter} from "next/router";
+
 import styles from '../styles/globals.css';
 
 export default function MyApp({ Component, pageProps }) {
     const [projects, setProjects] = useState([]);
     const [tags, setTags] = useState([]);
+
+    const router = useRouter();
 
     useEffect(() => {
         fetch(`/api/getSiteData`)
@@ -29,7 +33,7 @@ export default function MyApp({ Component, pageProps }) {
         };
 
         router.events.on('routeChangeComplete', handleRouteChange);
-        
+
         return () => {
             router.events.off('routeChangeComplete', handleRouteChange);
         };
