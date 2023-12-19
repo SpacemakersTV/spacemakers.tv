@@ -51,6 +51,8 @@ const Contact = () => {
                             progress: undefined,
                             theme: "colored",
                         })
+
+                        e.target.reset();
                     } else {
                         toast.error('There was an error submitting the form!', {
                             position: "top-right",
@@ -82,7 +84,7 @@ const Contact = () => {
             console.error(err);
         }
 
-        e.target.reset();
+        
     };
 
     const handleSetFirstName = (e) => {
