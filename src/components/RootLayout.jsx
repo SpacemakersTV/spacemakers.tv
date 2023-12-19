@@ -20,6 +20,20 @@ export default function RootLayout({ children }) {
                 <meta property="og:url" content={metadata.url} />
                 <link rel="icon" href={metadata.icon} />
                 <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+
+                <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZJRZBZBZHT"></script>
+                <script dangerouslySetInnerHTML={{
+                    __html: `
+                    window.dataLayer = window.dataLayer || [];
+                    function gtag(){dataLayer.push(arguments);}
+                    gtag('js', new Date());
+                  
+                    gtag('config', 'G-ZJRZBZBZHT');
+                    `
+                }}>
+                </script>
+
+
             </Head>
             {children}
         </React.Fragment>

@@ -21,6 +21,20 @@ export default function MyApp({ Component, pageProps }) {
             })
     }, []);
 
+    useEffect(() => {
+        const handleRouteChange = (url) => {
+            window.gtag('config', 'G-ZJRZBZBZHT', {
+                page_path: url,
+            });
+        };
+
+        router.events.on('routeChangeComplete', handleRouteChange);
+        
+        return () => {
+            router.events.off('routeChangeComplete', handleRouteChange);
+        };
+    }, [router.events]);
+
 
     return (
         <RootLayout>
