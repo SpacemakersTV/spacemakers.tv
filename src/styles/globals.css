@@ -1,27 +1,31 @@
 @font-face {
 	font-family: "Basier Square";
-	src: url("../../public/fonts/basiersquare-regular-webfont.woff2") format("woff2");
+	src: url("../../public/fonts/basiersquare-regular-webfont.woff2")
+		format("woff2");
 	font-weight: 400;
 	font-style: normal;
 }
 
 @font-face {
 	font-family: "Basier Square";
-	src: url("../../public/fonts/basiersquare-regularitalic-webfont.woff2") format("woff2");
+	src: url("../../public/fonts/basiersquare-regularitalic-webfont.woff2")
+		format("woff2");
 	font-weight: 400;
 	font-style: italic;
 }
 
 @font-face {
 	font-family: "Basier Square";
-	src: url("../../public/fonts/basiersquare-medium-webfont.woff2") format("woff2");
+	src: url("../../public/fonts/basiersquare-medium-webfont.woff2")
+		format("woff2");
 	font-weight: 500;
 	font-style: normal;
 }
 
 @font-face {
 	font-family: "Basier Square";
-	src: url("../../public/fonts/basiersquare-semibold-webfont.woff2") format("woff2");
+	src: url("../../public/fonts/basiersquare-semibold-webfont.woff2")
+		format("woff2");
 	font-weight: 600;
 	font-style: normal;
 }
@@ -39,7 +43,6 @@
 
 	--modal-width: 80%;
 	--modal-height: 80%;
-
 
 	/* About */
 	--about-text-size: 1.2rem;
@@ -61,7 +64,7 @@
 	--filter-item-margin: var(--global-whitespace-xxs);
 
 	/* white-space */
-	--global-baseline: calc(1rem/3);
+	--global-baseline: calc(1rem / 3);
 	--global-whitespace-xxs: var(--global-baseline);
 	--global-whitespace-xs: calc(var(--global-baseline) * 2);
 	--global-whitespace-sm: calc(var(--global-baseline) * 3);
@@ -69,6 +72,7 @@
 	--global-whitespace-lg: calc(var(--global-baseline) * 5);
 	--global-whitespace-xl: calc(var(--global-baseline) * 6);
 
+	--global-icon-size: 30px;
 }
 
 @media only screen and (max-width: 1200px) {
@@ -88,7 +92,7 @@
 		--thumbnail-order-direction: row;
 
 		--thumbnail-image-height: none;
-		
+
 		/* FILTER */
 	}
 }
@@ -109,9 +113,6 @@
 		--thumbnail-order: no-wrap;
 
 		--thumbnail-image-height: none;
-
-		
-		
 	}
 }
 
@@ -141,7 +142,8 @@
 }
 
 @media (prefers-color-scheme: dark) {
-	:root {}
+	:root {
+	}
 }
 
 * {
@@ -162,4 +164,5 @@ body {
 	height: 100vh;
 }
 
-body {}
+body {
+}
