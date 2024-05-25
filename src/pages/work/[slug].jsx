@@ -58,30 +58,30 @@ export default function Page(props) {
 							/>
 						))}
 
-					<div className={styles.photo_container}>
-						{project.image_links.map((image, index) => (
-							// <img key={index} src={image} className={styles.modal_img} />
+					{/* <div className={styles.photo_container}> */}
+					{project.image_links.map((image, index) => (
+						// <img key={index} src={image} className={styles.modal_img} />
 
-							<img
-								key={index}
-								// width={960}
-								// height={540}
-								src={image}
-								alt={project.title}
-								className={styles.modal_img}
-								// priority
-							/>
+						<img
+							key={index}
+							// width={960}
+							// height={540}
+							src={image}
+							alt={project.title}
+							className={styles.modal_img}
+							// priority
+						/>
 
-							// <Image
-							//     key={index}
-							//     src={image}
-							//     alt={project.title}
-							//     width={960} // Adjust based on your needs
-							//     height={540} // Adjust based on your needs
-							//     className={styles.modal_img}
-							// />
-						))}
-					</div>
+						// <Image
+						//     key={index}
+						//     src={image}
+						//     alt={project.title}
+						//     width={960} // Adjust based on your needs
+						//     height={540} // Adjust based on your needs
+						//     className={styles.modal_img}
+						// />
+					))}
+					{/* </div> */}
 				</div>
 			</div>
 		</Container>
