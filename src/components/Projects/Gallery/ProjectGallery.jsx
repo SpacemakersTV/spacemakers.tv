@@ -22,8 +22,10 @@ const ProjectGallery = ({ projects, tags }) => {
 		(a, b) => new Date(b.date) - new Date(a.date)
 	);
 
+	console.log(filteredProjects);
+
 	filteredProjects = filteredProjects.filter((project) => {
-		return !isNullOrempty(project.thumbnail_url);
+		return !isNullOrempty(project.thumbnail_url) && !isNullOrempty(project.id);
 	});
 
 	return (
